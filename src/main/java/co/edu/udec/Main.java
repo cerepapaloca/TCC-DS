@@ -1,6 +1,8 @@
 package co.edu.udec;
 
 import co.edu.udec.command.CommandHandler;
+import co.edu.udec.command.commands.*;
+import co.edu.udec.storage.sql.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.jline.reader.EndOfFileException;

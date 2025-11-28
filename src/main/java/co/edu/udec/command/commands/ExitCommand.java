@@ -1,9 +1,9 @@
 package co.edu.udec.command.commands;
 
-import xyz.cereshost.abd.Main;
-import xyz.cereshost.abd.Service;
-import xyz.cereshost.abd.command.Arguments;
-import xyz.cereshost.abd.command.Command;
+import co.edu.udec.Main;
+import co.edu.udec.Service;
+import co.edu.udec.command.Arguments;
+import co.edu.udec.command.Command;
 
 public class ExitCommand extends Command {
     public ExitCommand() {
