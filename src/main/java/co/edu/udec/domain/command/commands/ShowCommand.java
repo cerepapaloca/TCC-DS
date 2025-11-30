@@ -4,7 +4,6 @@ import co.edu.udec.domain.Service;
 import co.edu.udec.domain.command.Arguments;
 import co.edu.udec.domain.command.Command;
 import co.edu.udec.domain.entity.*;
-import co.edu.udec.model.*;
 import co.edu.udec.domain.storage.ExecuteSQL;
 
 public class ShowCommand extends Command {
