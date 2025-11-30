@@ -1,6 +1,6 @@
-package co.edu.udec.storage;
+package co.edu.udec.domain.storage;
 
-import co.edu.udec.Service;
+import co.edu.udec.domain.Service;
 import lombok.experimental.UtilityClass;
 import org.jetbrains.annotations.NotNull;
 
@@ -10,10 +10,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
-import static co.edu.udec.storage.DataBaseMySql.getConnection;
+import static co.edu.udec.domain.storage.DataBaseMySql.getConnection;
 
 @UtilityClass
 @SuppressWarnings("SqlSourceToSinkFlow")

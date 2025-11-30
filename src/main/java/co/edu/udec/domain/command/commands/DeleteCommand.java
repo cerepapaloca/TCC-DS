@@ -1,11 +1,10 @@
-package co.edu.udec.command.commands;
+package co.edu.udec.domain.command.commands;
 
-import co.edu.udec.Main;
-import co.edu.udec.Service;
-import co.edu.udec.command.Arguments;
-import co.edu.udec.command.Command;
-import co.edu.udec.model.*;
-import co.edu.udec.storage.ExecuteSQL;
+import co.edu.udec.domain.Service;
+import co.edu.udec.domain.command.Arguments;
+import co.edu.udec.domain.command.Command;
+import co.edu.udec.domain.entity.*;
+import co.edu.udec.domain.storage.ExecuteSQL;
 
 import java.util.UUID;
 

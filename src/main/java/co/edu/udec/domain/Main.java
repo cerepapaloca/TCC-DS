@@ -1,7 +1,8 @@
-package co.edu.udec;
+package co.edu.udec.domain;
 
-import co.edu.udec.command.CommandHandler;
+import co.edu.udec.domain.command.CommandHandler;
 import co.edu.udec.command.commands.*;
+import co.edu.udec.domain.command.commands.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.jline.reader.EndOfFileException;

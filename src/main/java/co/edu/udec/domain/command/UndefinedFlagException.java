@@ -1,7 +1,7 @@
 /**
  * Código copiado de otros proyectos
  */
-package co.edu.udec.command;
+package co.edu.udec.domain.command;
 
 /**
  * Se usa cuando se intenta obtener un flag, pero este no se escribió en los argumentos

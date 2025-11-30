@@ -1,4 +1,4 @@
-package co.edu.udec;
+package co.edu.udec.domain;
 
 import lombok.experimental.UtilityClass;
 import org.jetbrains.annotations.NotNull;

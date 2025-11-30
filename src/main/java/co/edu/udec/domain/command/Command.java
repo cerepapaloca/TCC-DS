@@ -1,4 +1,4 @@
-package co.edu.udec.command;
+package co.edu.udec.domain.command;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

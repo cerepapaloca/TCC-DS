@@ -1,6 +1,6 @@
-package co.edu.udec.model;
+package co.edu.udec.domain.entity;
 
-import co.edu.udec.Utils;
+import co.edu.udec.domain.Utils;
 
 import java.util.UUID;
 

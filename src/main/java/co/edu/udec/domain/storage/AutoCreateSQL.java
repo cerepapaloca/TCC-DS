@@ -1,4 +1,4 @@
-package co.edu.udec.storage;
+package co.edu.udec.domain.storage;
 
 import java.util.UUID;
 

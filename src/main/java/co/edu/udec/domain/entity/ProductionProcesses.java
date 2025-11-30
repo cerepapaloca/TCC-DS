@@ -1,4 +1,4 @@
-package co.edu.udec.model;
+package co.edu.udec.domain.entity;
 
 import java.util.List;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package co.edu.udec.model;
+package co.edu.udec.domain.entity;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

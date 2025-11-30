@@ -1,9 +1,9 @@
 /**
  * Código copiado de otros proyectos
  */
-package co.edu.udec.command;
+package co.edu.udec.domain.command;
 
-import co.edu.udec.Utils;
+import co.edu.udec.domain.Utils;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

@@ -1,6 +1,6 @@
-package co.edu.udec.storage;
+package co.edu.udec.domain.storage;
 
-import co.edu.udec.Service;
+import co.edu.udec.domain.Service;
 import lombok.Getter;
 
 import java.sql.*;

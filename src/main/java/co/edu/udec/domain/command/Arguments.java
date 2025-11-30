@@ -1,7 +1,7 @@
 /**
  * Código copiado de otros proyectos
  */
-package co.edu.udec.command;
+package co.edu.udec.domain.command;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
