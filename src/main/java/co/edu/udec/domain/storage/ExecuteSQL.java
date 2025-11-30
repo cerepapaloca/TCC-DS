@@ -4,6 +4,7 @@ import co.edu.udec.domain.Service;
 import lombok.experimental.UtilityClass;
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -39,7 +40,7 @@ public class ExecuteSQL {
         }
     }
 
-    public <T> T selectRow(UUID uuid, Class<T> clazz) {
+    public String selectRow(UUID uuid, Class<?> clazz) {
         try (Connection connection = getConnection()){
             PreparedStatement statement = connection.prepareStatement(AutoCreateSQL.createSelectSQL(uuid, clazz.getName()));
             ResultSet resultSet = statement.executeQuery();
@@ -51,11 +52,11 @@ public class ExecuteSQL {
         }
     }
 
-    public <T> List<T> selectAllRow(Class<T> clazz) {
+    public List<String> selectAllRow(Class<?> clazz) {
         try (Connection connection = getConnection()){
-            PreparedStatement statement = connection.prepareStatement(AutoCreateSQL.createAllSelectSQL(clazz.getName()));
+            PreparedStatement statement = connection.prepareStatement(AutoCreateSQL.createAllSelectSQL(clazz.getSimpleName()));
             ResultSet resultSet = statement.executeQuery();
-            ArrayList<T> objects = new ArrayList<>();
+            ArrayList<String> objects = new ArrayList<>();
             while (resultSet.next()) {
                 objects.add(createObject(clazz, resultSet));
             }
@@ -66,26 +67,15 @@ public class ExecuteSQL {
         }
     }
 
-    private <T> @NotNull T createObject(Class<T> clazz, ResultSet resultSet) {
-        try {
-            // Obtiene la declaraciones de los constructores
-            var constructors = clazz.getDeclaredConstructors();
-            var constructor = constructors[0];
-
-            // Obtiene los parámetros del constructor
-            var params = constructor.getParameters();
-            Object[] values = new Object[params.length];
-
-            // Va por cada parámetros y le asigna el valor
-            for (int i = 0; i < params.length; i++) {
-                String columnName = params[i].getName();
-                values[i] = resultSet.getObject(columnName);
-            }
-
-            return (T) constructor.newInstance(values);
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    private @NotNull String createObject(Class<?> clazz, ResultSet rs) throws SQLException {
+        StringBuilder builder = new StringBuilder();
+        builder.append(clazz.getSimpleName()).append("={");
+        for (Field field : clazz.getDeclaredFields()) {
+            field.setAccessible(true);
+            builder.append(field.getName()).append("=").append(rs.getObject(field.getName())).append(",");
         }
+        builder.setLength(builder.length() - 1);
+        return builder.append("}").toString();
     }
+
 }

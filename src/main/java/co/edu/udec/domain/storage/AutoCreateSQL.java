@@ -18,7 +18,7 @@ public class AutoCreateSQL {
                 Object value = field.get(obj);
                 columns.append(field.getName()).append(",");
 
-                if (value instanceof String) {
+                if (value instanceof String || value instanceof UUID) {
                     values.append("'").append(value).append("',");
                 } else {
                     values.append(value).append(",");

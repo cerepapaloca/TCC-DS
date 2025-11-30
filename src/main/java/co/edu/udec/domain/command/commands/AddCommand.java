@@ -5,7 +5,6 @@ import co.edu.udec.domain.Utils;
 import co.edu.udec.domain.command.Arguments;
 import co.edu.udec.domain.command.Command;
 import co.edu.udec.domain.entity.*;
-import co.edu.udec.model.*;
 import co.edu.udec.domain.storage.ExecuteSQL;
 
 import java.util.List;
@@ -18,6 +17,10 @@ public class AddCommand extends Command {
 
     @Override
     public void execute(Arguments arg) {
+        if (arg.length() == 0){
+            Service.sendMessage("Debes ingresar el nombre una entidad");
+            return;
+        }
         switch (arg.get(0).toLowerCase()){
             case "equipment" -> {
                 if (arg.length() >= 4){
