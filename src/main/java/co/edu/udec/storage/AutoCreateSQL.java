@@ -66,8 +66,8 @@ public class AutoCreateSQL {
         );
     }
 
-    public static String createDeleteSQL(Object obj) {
-        return "DELETE" + createSQLFromID(obj);
+    public static String createDeleteSQL(UUID uuid, String name) {
+        return "DELETE FROM " + name + " WHERE uuid = '" + uuid + "';";
     }
 
     public static String createSelectSQL(UUID uuid, String name) {

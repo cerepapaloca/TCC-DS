@@ -1,6 +1,7 @@
 package co.edu.udec.storage;
 
 import co.edu.udec.Service;
+import lombok.experimental.UtilityClass;
 import org.jetbrains.annotations.NotNull;
 
 import java.sql.Connection;
@@ -14,13 +15,14 @@ import java.util.UUID;
 
 import static co.edu.udec.storage.DataBaseMySql.getConnection;
 
+@UtilityClass
 @SuppressWarnings("SqlSourceToSinkFlow")
 public class ExecuteSQL {
 
 
-    public void addRow(Objects objects) {
+    public void addRow(Object object) {
         try (Connection connection = getConnection()){
-            PreparedStatement statement = connection.prepareStatement(AutoCreateSQL.createInsertSQL(objects));
+            PreparedStatement statement = connection.prepareStatement(AutoCreateSQL.createInsertSQL(object));
             //ResultSet resultSet = statement.executeQuery();
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -28,9 +30,9 @@ public class ExecuteSQL {
         }
     }
 
-    public void removeRow(Objects objects) {
+    public void removeRow(UUID uuid, Class<?> clazz) {
         try (Connection connection = getConnection()){
-            PreparedStatement statement = connection.prepareStatement(AutoCreateSQL.createDeleteSQL(objects));
+            PreparedStatement statement = connection.prepareStatement(AutoCreateSQL.createDeleteSQL(uuid, clazz.getSimpleName()));
             //ResultSet resultSet = statement.executeQuery();
             statement.executeUpdate();
         } catch (SQLException e) {
