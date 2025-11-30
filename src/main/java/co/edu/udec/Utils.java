@@ -44,5 +44,11 @@ public class Utils {
         return formatter.format(date);
     }
 
+    public enum Unit{
+        KILOGRAMO,
+        LITROS,
+        TONELADAS
+    }
+
 
 }

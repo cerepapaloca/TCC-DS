@@ -23,13 +23,6 @@ public class Main {
     @Getter
     private static boolean isRunning = true;
 
-    public static final CatalogDataBase CATALOG_DATA_BASE = new CatalogDataBase();
-    public static final ClientDataBase CLIENT_DATA_BASE = new ClientDataBase();
-    public static final InventoryCarDataBase INVENTORY_CAR_DATA_BASE = new InventoryCarDataBase();
-    public static final InventoryPiecesDataBase INVENTORY_PIECES_DATA_BASE = new InventoryPiecesDataBase();
-    public static final SellerDataBase SELLER_DATA_BASE = new SellerDataBase();
-    public static final SellLogDataBase SELL_LOG_DATA_BASE = new SellLogDataBase();
-
     static{
         commandHandler.registerCommand(
                 new HelpCommand(),
